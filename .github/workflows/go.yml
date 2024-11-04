@@ -22,7 +22,7 @@ jobs:
       run: go build -o estudai-api ./...
 
     - name: Upload Build Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: estudai-api
         path: estudai-api
@@ -38,7 +38,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Download Build Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v4
       with:
         name: estudai-api
 
