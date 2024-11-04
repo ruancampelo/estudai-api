@@ -5,6 +5,7 @@ services:
       context: .
     environment:
         - GODEBUG=x509ignoreCN=0
+        - NODE_TLS_REJECT_UNAUTHORIZED=0
     env_file:
       - .env
     ports:
