@@ -31,5 +31,8 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
-    - name: Pull Docker Image
-      run: docker pull ruancampelo/estudai-api:1
+    - name: Build Docker Image
+      run: docker build -t ruancampelo/estudai-api:1 .
+
+    - name: Push Docker Image
+      run: docker push ruancampelo/estudai-api:1
