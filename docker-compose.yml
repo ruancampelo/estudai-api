@@ -7,10 +7,6 @@ services:
       - .env
     ports:
       - "5112:5112"
-    environment:
-      - CONNECTION_STRING={CONNECTION_STRING}
-      - GEMINI_API_KEY={CONNECTION_STRING}
-      - MODE_ENVIRONMENT={CONNECTION_STRING}
     depends_on:
       - db
 
