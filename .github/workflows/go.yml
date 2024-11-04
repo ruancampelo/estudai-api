@@ -32,4 +32,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Pull Docker Image
-      run: docker pull <seu_usuario>/<nome_da_imagem>:<tag>
+      run: docker pull ruancampelo/estudai-api:1
