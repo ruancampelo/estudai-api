@@ -3,6 +3,8 @@ services:
     image: ruancampelo/estudai-api:1
     build:
       context: .
+    environment:
+        - GODEBUG=x509ignoreCN=0
     env_file:
       - .env
     ports:
