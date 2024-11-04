@@ -15,7 +15,7 @@ RUN go mod download
 RUN go build -o main ./cmd
 
 # Etapa final para execução da aplicação
-FROM gcr.io/distroless/static
+FROM gcr.io/distroless/base
 COPY --from=builder /app/main /main
 EXPOSE 5112
 ENTRYPOINT ["/main"]
