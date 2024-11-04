@@ -1,0 +1,27 @@
+services:
+  app:
+    image: ruancampelo/estudai-api:1
+    build:
+        context: .
+    ports:
+      - "5112:5112"
+    environment:
+      - CONNECTION_STRING={CONNECTION_STRING}
+      - GEMINI_API_KEY={CONNECTION_STRING}
+      - MODE_ENVIRONMENT={CONNECTION_STRING}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
