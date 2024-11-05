@@ -3,9 +3,6 @@ services:
     image: ruancampelo/estudai-api:1
     build:
       context: .
-    environment:
-        - GODEBUG=x509ignoreCN=0
-        - NODE_TLS_REJECT_UNAUTHORIZED=0
     env_file:
       - .env
     ports:
@@ -21,6 +18,7 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=estudai
     volumes:
       - db_data:/var/lib/postgresql/data
 
