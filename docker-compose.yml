@@ -22,8 +22,6 @@ services:
 networks:
   product_service_network:
     driver: bridge
-    external: true
-
 
 
 
