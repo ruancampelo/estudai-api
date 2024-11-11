@@ -7,4 +7,9 @@ services:
       - .env
     ports:
       - "5112:5112"
+    networks:
+      - product_service_network
+networks:
+  product_service_network:
+    driver: bridge
 
