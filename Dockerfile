@@ -1,12 +1,6 @@
 # Etapa de construção
 FROM golang:1.23-alpine AS builder
 
-
-# Copiar o arquivo de configuração do Nginx para o diretório 'sites-available'
-COPY ./estudai-api.zapto.org /etc/nginx/sites-available/estudai-api.zapto.org
-
-# Criar o link simbólico para 'sites-enabled'
-RUN ln -s /etc/nginx/sites-available/estudai-api.zapto.org /etc/nginx/sites-enabled/
 # Instala ferramentas auxiliares e define o diretório de trabalho
 RUN apk add --no-cache git
 WORKDIR /app
