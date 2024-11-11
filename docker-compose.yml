@@ -9,7 +9,21 @@ services:
       - "5112:5112"
     networks:
       - product_service_network
+
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: estudai
+    networks:
+      - app-network
+    expose:
+      - "5432"
 networks:
   product_service_network:
     driver: bridge
+    external: true
+
+
+
 
