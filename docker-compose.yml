@@ -7,8 +7,6 @@ services:
       - .env
     ports:
       - "5112:5112"
-    networks:
-      - product_service_network
     depends_on:
       - db
 
@@ -17,16 +15,10 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_DB: estudai
-    networks:
-      - product_service_network
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
-
-networks:
-  product_service_network:
-    driver: bridge
 
 
 
