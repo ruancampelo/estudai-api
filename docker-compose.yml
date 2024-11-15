@@ -10,7 +10,6 @@ services:
       - ${SSL_CERT_HOST_PATH}:${SSL_CERT_CONTAINER_PATH}:ro
     ports:
       - "5112:5112"
-      - "443:443"
     depends_on:
       - db
 

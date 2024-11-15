@@ -33,7 +33,7 @@ func main() {
 	certFile := os.Getenv("CERTIFICATE")
 	keyFile := os.Getenv("KEY_CERTIFCATE")
 
-	if err := router.RunTLS(":443", certFile, keyFile); err != nil {
+	if err := router.RunTLS(":5112", certFile, keyFile); err != nil {
 		log.Fatalf("Erro ao iniciar o servidor HTTPS: %s", err)
 	}
 	router.Run(":5112")
