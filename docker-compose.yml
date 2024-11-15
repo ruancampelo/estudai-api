@@ -5,6 +5,9 @@ services:
       context: .
     env_file:
       - .env
+    volumes:
+      - ${SSL_KEY_HOST_PATH}:${SSL_KEY_CONTAINER_PATH}:ro
+      - ${SSL_CERT_HOST_PATH}:${SSL_CERT_CONTAINER_PATH}:ro
     ports:
       - "5112:5112"
     depends_on:
