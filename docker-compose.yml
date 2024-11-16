@@ -6,8 +6,7 @@ services:
     env_file:
       - .env
     volumes:
-      - /ssl/local.crt:/ssl/local.crt
-      - /ssl/local.key:/ssl/local.key
+      - ./ssl:/etc/ssl
     ports:
       - "5112:5112"
     depends_on:
