@@ -6,8 +6,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ${SSL_CERTIFICATE}:${SSL_CERTIFICATE}
-      - ${SSL_CERTIFICATE_KEY}:${SSL_CERTIFICATE_KEY}
+      - /ssl/local.crt:/ssl/local.crt
+      - /ssl/local.key:/ssl/local.key
     ports:
       - "5112:5112"
     depends_on:
