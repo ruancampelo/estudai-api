@@ -6,7 +6,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./ssl:/etc/ssl
+      - ../ssl:/etc/ssl
     ports:
       - "5112:5112"
     depends_on:
